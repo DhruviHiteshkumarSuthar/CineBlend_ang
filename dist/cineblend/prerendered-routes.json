@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/aboutus",
+    "/film",
+    "/genre",
+    "/home",
+    "/login",
+    "/watchlist"
+  ]
+}
