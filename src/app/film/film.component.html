@@ -1,0 +1,42 @@
+<div class="main">
+    <div class="search-bar">
+      <input type="text" class="search-input" id="title" [(ngModel)]="title" placeholder="Enter Movie name"  required>
+      <button class="search-btn" (click)="searchMovie()">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  
+  <div *ngIf="movieDetails">
+    <div class="container">
+      <div class="card" >
+        <div class="row">
+          <div class="col-md-3">
+              <img src="{{ movieDetails.Poster }}" class="card-img-top" alt="Movie Image">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title">Title: {{ movieDetails.Title }}</h5>
+              <p class="card-subtitle mb-2">
+                <strong>Director: {{ movieDetails.Director }}</strong>
+                <strong>Writer: {{ movieDetails.Writer }}</strong>
+              </p>
+              <p>Actors: {{ movieDetails.Actors }}</p>
+              <p>Genre: {{ movieDetails.Genre }}</p>
+              <p>Year: {{ movieDetails.Year }}</p>
+              <p>Released: {{ movieDetails.Released }}</p>
+              <p>Runtime: {{ movieDetails.Runtime }}</p>
+              <p>IMDb Rating: {{ movieDetails.imdbRating }}</p>
+              <p>Language: {{ movieDetails.Language }}</p>
+              <p>Country: {{ movieDetails.Country }}</p>
+              <p>Awards: {{ movieDetails.Awards }}</p>
+              <p class="card-text">Plot: {{ movieDetails.Plot }}</p>
+              <p>BoxOffice: {{ movieDetails.BoxOffice }}</p>
+              <p>Production: {{ movieDetails.Production }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  

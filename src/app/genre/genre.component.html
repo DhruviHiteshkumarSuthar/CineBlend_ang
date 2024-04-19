@@ -1,0 +1,36 @@
+<div class="main">
+    <div class="explore-header">
+      <div class="genre-dropdown">
+        <label for="subject" class="title">Select a Genre:</label>
+        <select class ="form-select" id="genre-select" [(ngModel)]="selectedGenre" name="subject" (change)="onGenreSelect()">
+          <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <div *ngFor="let movie of movies">
+      <div class="book-cards">
+        <div class="card" >
+          <div class="row">
+            <div class="col-md-3">
+                <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" class="card-img-top" alt="Movie Image">
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h5 class="card-title">Title: {{ movie.title }}</h5>
+                <p class="card-subtitle mb-2">
+                  <strong>Genre: {{ movie.genre_ids.join(', ') }}</strong><br>
+                  <strong>Rating: {{ movie.vote_average }}</strong><br>
+                  <strong>Plot: {{ movie.overview }}</strong><br>
+                </p>
+                <button class="btn btn-primary" >Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="more">
+      <button class="btn more-btn" (click)="loadMore()">More</button>
+    </div>
+</div>
